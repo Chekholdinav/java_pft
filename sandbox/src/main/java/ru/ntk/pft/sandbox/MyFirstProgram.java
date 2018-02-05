@@ -9,16 +9,16 @@ public class MyFirstProgram {
         hello("Gringo");
         hello("Servito");
 
-        int len = 10;
+        Square s = new Square(5);
 
-        System.out.println("Площадь квадрата " + len + " = " + area(len));
+        System.out.println("Площадь квадрата " + s.l + " = " + area(s));
 
 
-        int rog = 4;
+        Rectangle r = new Rectangle(4, 5);
 
-        int gog = 5;
 
-        System.out.println("Значение 1 = " + rog + " Значение 2 = " + gog + " Результат = " + area(rog, gog) );
+
+        System.out.println("Значение 1 = " + r.a + " Значение 2 = " + r.b + " Результат = " + area(r) );
     }
 
     public static void hello(String sombody){
@@ -27,11 +27,11 @@ public class MyFirstProgram {
 
     }
 
-    public static int area(int l ){
-        return l * l;
+    public static double area(Square s){
+        return s.l * s.l;
     }
 
-    public static int area(int a, int b ){
-        return a * b;
+    public static double area(Rectangle r){
+        return r.a * r.b;
     }
 }
