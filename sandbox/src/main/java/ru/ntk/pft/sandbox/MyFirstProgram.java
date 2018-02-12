@@ -2,7 +2,7 @@ package ru.ntk.pft.sandbox;
 
 public class MyFirstProgram {
     public static void main(String[] args) {
-      //  System.out.println("Hello world");
+        //  System.out.println("Hello world");
 
         hello("wold");
         hello("Vold");
@@ -17,11 +17,10 @@ public class MyFirstProgram {
         Rectangle r = new Rectangle(4, 5);
 
 
-
-        System.out.println("Значение 1 = " + r.a + " Значение 2 = " + r.b + " Результат = " + r.area() );
+        System.out.println("Значение 1 = " + r.a + " Значение 2 = " + r.b + " Результат = " + r.area());
     }
 
-    public static void hello(String sombody){
+    public static void hello(String sombody) {
 
         System.out.println("Hello " + sombody + "!");
 
