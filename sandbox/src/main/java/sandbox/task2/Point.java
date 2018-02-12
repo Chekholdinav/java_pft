@@ -1,26 +1,38 @@
 package sandbox.task2;
 
 public class Point {
+  public double x;
+  public double y;
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
 
-    double p1 = 2 ;
+    Point p1 = new Point();
+    p1.x = 4;
+    p1.y = 4;
+
+    Point p2 = new Point();
+    p2.y = 8;
+    p2.x = 8;
 
     double x1 = 8.0;
     double x2 = 4.0;
     double y1 = 6.0;
     double y2 = 3.0;
-    double A = distance(x1,x2);
-    double B = distance(y1,y2);
 
-    System.out.println(" _________    __________     __________    _____");
-    System.out.println("√("+ x2 + "-" + x1 +")^2" + "+" + "√("+ y2 + "-" + y1 +")^2" + " + " + "√" +  A + " + " + B + " + " + "√"+ (A + B) + " = " + Math.sqrt(A+B));
-  }
+       System.out.println("√("+ p2.x + "-" + p1.x +")^2" + "+" + "√("+ p2.y + "-" + p1.y +")^2" + " = " + "√(" + (p2.x - p1.x)+")^2"  + " + " + "√(" + (p2.y - p1.y) + ")^2" + " = " + "√"+ ((p2.x - p1.x) * (p2.x - p1.x)) + ((p2.y - p1.y) * (p2.y - p1.y)) + " = " + distance(p1, p2));
 
-  public static double distance(double p1, double p2){
 
-    return (p2 - p1) * (p2 - p1);
 
   }
 
+  public static double distance(Point p1, Point p2) {
+
+    return Math.sqrt(((p2.x - p1.x) * (p2.x - p1.x)) + ((p2.y - p1.y) * (p2.y - p1.y)));
+
+  }
+/*
+  public double distance(Point p1, Point p2) {
+    return Math.sqrt(((p2.x - p1.x) * (p2.x - p1.x)) + ((p2.y - p1.y) * (p2.y - p1.y)));
+  }
+*/
 }
