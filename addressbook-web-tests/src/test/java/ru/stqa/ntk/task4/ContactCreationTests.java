@@ -21,7 +21,7 @@ public class ContactCreationTests {
     login("admin", "secret");
   }
 
-  private void login(String login, String password) {
+  public void login(String login, String password) {
     wd.findElement(By.name("pass")).click();
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys(password);
@@ -40,7 +40,7 @@ public class ContactCreationTests {
     dopParams();
   }
 
-  private void dopParams() {
+  public void dopParams() {
     if (!wd.findElement(By.xpath("//div[@id='content']/form/select[1]//option[4]")).isSelected()) {
       wd.findElement(By.xpath("//div[@id='content']/form/select[1]//option[4]")).click();
     }
@@ -62,13 +62,13 @@ public class ContactCreationTests {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  private void email(String email, String s) {
+  public void email(String email, String s) {
     wd.findElement(By.name(email)).click();
     wd.findElement(By.name(email)).clear();
     wd.findElement(By.name(email)).sendKeys(s);
   }
 
-  private void contactAddressAndTelephone(String title, String company, String address, String home, String mobile, String work, String fax) {
+  public void contactAddressAndTelephone(String title, String company, String address, String home, String mobile, String work, String fax) {
     wd.findElement(By.name("title")).click();
     wd.findElement(By.name("title")).clear();
     wd.findElement(By.name("title")).sendKeys(title);
@@ -92,7 +92,7 @@ public class ContactCreationTests {
     wd.findElement(By.name("fax")).sendKeys(fax);
   }
 
-  private void nameUser(GroupData groupData) {
+  public void nameUser(GroupData groupData) {
     wd.findElement(By.name(groupData.getFirstname())).click();
     wd.findElement(By.name(groupData.getFirstname())).clear();
     wd.findElement(By.name(groupData.getFirstname())).sendKeys("Test");

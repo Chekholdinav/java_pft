@@ -1,13 +1,13 @@
 package ru.stqa.ntk.task4;
 
 public class GroupData {
-  private final String firstname;
-  private final String middlename;
-  private final String test;
-  private final String lastname;
-  private final String testov;
-  private final String nickname;
-  private final String tester;
+  public final String firstname;
+  public final String middlename;
+  public final String test;
+  public final String lastname;
+  public final String testov;
+  public final String nickname;
+  public final String tester;
 
   public GroupData(String firstname, String middlename, String test, String lastname, String testov, String nickname, String tester) {
     this.firstname = firstname;
