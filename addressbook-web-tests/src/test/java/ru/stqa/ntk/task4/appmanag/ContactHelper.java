@@ -4,11 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ntk.task4.model.GroupData;
 
-public class ContactHelper {
- private FirefoxDriver wd;
+public class ContactHelper extends HelperBases{
 
   public ContactHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void dopParams() {
@@ -18,64 +17,32 @@ public class ContactHelper {
     if (!wd.findElement(By.xpath("//div[@id='content']/form/select[2]//option[5]")).isSelected()) {
       wd.findElement(By.xpath("//div[@id='content']/form/select[2]//option[5]")).click();
     }
-    wd.findElement(By.name("byear")).click();
-    wd.findElement(By.name("byear")).clear();
-    wd.findElement(By.name("byear")).sendKeys("2018");
-    wd.findElement(By.name("address2")).click();
-    wd.findElement(By.name("address2")).clear();
-    wd.findElement(By.name("address2")).sendKeys("vfddfg 34");
-    wd.findElement(By.name("phone2")).click();
-    wd.findElement(By.name("phone2")).clear();
-    wd.findElement(By.name("phone2")).sendKeys("23");
-    wd.findElement(By.name("notes")).click();
-    wd.findElement(By.name("notes")).clear();
-    wd.findElement(By.name("notes")).sendKeys("grdg");
+    type(null, By.name("byear"), "2018");
+    type(null, By.name("address2"), "vfddfg 34");
+    type(null, By.name("phone2"), "23");
+    type(null, By.name("notes"), "grdg");
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
   public void email(String email, String s) {
-    wd.findElement(By.name(email)).click();
-    wd.findElement(By.name(email)).clear();
-    wd.findElement(By.name(email)).sendKeys(s);
+    type(null, By.name(email), s);
   }
 
   public void contactAddressAndTelephone(String title, String company, String address, String home, String mobile, String work, String fax) {
-    wd.findElement(By.name("title")).click();
-    wd.findElement(By.name("title")).clear();
-    wd.findElement(By.name("title")).sendKeys(title);
-    wd.findElement(By.name("company")).click();
-    wd.findElement(By.name("company")).clear();
-    wd.findElement(By.name("company")).sendKeys(company);
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(address);
-    wd.findElement(By.name("home")).click();
-    wd.findElement(By.name("home")).clear();
-    wd.findElement(By.name("home")).sendKeys(home);
-    wd.findElement(By.name("mobile")).click();
-    wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(mobile);
-    wd.findElement(By.name("work")).click();
-    wd.findElement(By.name("work")).clear();
-    wd.findElement(By.name("work")).sendKeys(work);
-    wd.findElement(By.name("fax")).click();
-    wd.findElement(By.name("fax")).clear();
-    wd.findElement(By.name("fax")).sendKeys(fax);
+    type(null, By.name("title"), title);
+    type(null, By.name("company"), company);
+    type(null, By.name("address"), address);
+    type(null, By.name("home"), home);
+    type(null, By.name("mobile"), mobile);
+    type(null, By.name("work"), work);
+    type(null, By.name("fax"), fax);
   }
 
   public void nameUser(GroupData groupData) {
-    wd.findElement(By.name(groupData.getFirstname())).click();
-    wd.findElement(By.name(groupData.getFirstname())).clear();
-    wd.findElement(By.name(groupData.getFirstname())).sendKeys("Test");
-    wd.findElement(By.name(groupData.getMiddlename())).click();
-    wd.findElement(By.name(groupData.getMiddlename())).clear();
-    wd.findElement(By.name(groupData.getMiddlename())).sendKeys(groupData.getTest());
-    wd.findElement(By.name(groupData.getLastname())).click();
-    wd.findElement(By.name(groupData.getLastname())).clear();
-    wd.findElement(By.name(groupData.getLastname())).sendKeys(groupData.getTestov());
-    wd.findElement(By.name(groupData.getNickname())).click();
-    wd.findElement(By.name(groupData.getNickname())).clear();
-    wd.findElement(By.name(groupData.getNickname())).sendKeys(groupData.getTester());
+    type(groupData, By.name(groupData.getFirstname()), "Test");
+    type(null, By.name(groupData.getMiddlename()), groupData.getTest());
+    type(null, By.name(groupData.getLastname()), groupData.getTestov());
+    type(null, By.name(groupData.getNickname()), groupData.getTester());
   }
 
   public void deleteContact(By id) {
