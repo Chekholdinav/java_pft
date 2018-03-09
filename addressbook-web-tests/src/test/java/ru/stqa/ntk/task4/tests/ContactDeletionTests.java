@@ -7,9 +7,9 @@ public class ContactDeletionTests extends TestsBase {
 
     @Test
     public void contactDeletionTests() {
-        appli.gotoHome();
-        appli.selectContact(By.id("11")); //следующая id 12
-        appli.selectAlertOk();
+        appli.getNavigationHelper().gotoHome();
+        appli.getContactHelper().deleteContact(By.id("13")); //следующая id 12
+        appli.getContactHelper().selectAlertOk();
     }
 
 }

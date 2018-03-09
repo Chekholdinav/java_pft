@@ -7,10 +7,10 @@ public class ContactCreationTests extends TestsBase {
 
   @Test
   public void contactCreationTests() {
-    appli.nameUser(new GroupData("firstname", "middlename", "Test", "lastname", "Testov", "nickname", "Tester"));
-    appli.contactAddressAndTelephone("Test", "TTK", "fsdfsf", "323-32-32", "8-456-456-43-34", "rew", "4334");
-    appli.email("email", "test@gr.rt");
-    appli.dopParams();
+    appli.getContactHelper().nameUser(new GroupData("firstname", "middlename", "Test", "lastname", "Testov", "nickname", "Tester"));
+    appli.getContactHelper().contactAddressAndTelephone("Test", "TTK", "fsdfsf", "323-32-32", "8-456-456-43-34", "rew", "4334");
+    appli.getContactHelper().email("email", "test@gr.rt");
+    appli.getContactHelper().dopParams();
   }
 
 }

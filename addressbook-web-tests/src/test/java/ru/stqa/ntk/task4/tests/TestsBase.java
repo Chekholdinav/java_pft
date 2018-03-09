@@ -18,7 +18,7 @@ public class TestsBase {
     appli.stop();
   }
 
-  public ApplicationManagers getAppli() {
-    return appli;
-  }
+ // public ApplicationManagers getAppli() {
+  //  return appli;
+  //}
 }
