@@ -1,4 +1,4 @@
-package ru.stqa.ntk.task4;
+package ru.stqa.ntk.task4.model;
 
 public class GroupData {
   public final String firstname;

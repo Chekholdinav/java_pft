@@ -1,15 +1,14 @@
-package ru.stqa.ntk.task4;
+package ru.stqa.ntk.task4.appmanag;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import ru.stqa.ntk.task4.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestsBase {
+public class ApplicationManagers {
   FirefoxDriver wd;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
@@ -21,8 +20,7 @@ public class TestsBase {
     }
   }
 
-  @BeforeMethod
-  public void setUp() throws Exception {
+  protected void init() {
     wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("F://Program Files (x86)/Mozilla Firefox/firefox.exe"));
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
@@ -107,8 +105,22 @@ public class TestsBase {
     wd.findElement(By.name(groupData.getNickname())).sendKeys(groupData.getTester());
   }
 
-  @AfterMethod
-  public void tearDown() {
+  public void stop() {
     wd.quit();
+  }
+
+  public void gotoHome() {
+      wd.findElement(By.linkText("home")).click();
+  }
+
+  public void selectContact(By id) {
+      if (!wd.findElement(id).isSelected()) {
+          wd.findElement(id).click();
+          wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+      }
+  }
+
+  public void selectAlertOk() {
+      wd.switchTo().alert().accept();
   }
 }
