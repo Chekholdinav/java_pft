@@ -1,12 +1,13 @@
 package ru.stqa.ntk.task4.appmanag;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ntk.task4.model.GroupData;
 
 public class ContactHelper extends HelperBases{
 
-  public ContactHelper(FirefoxDriver wd) {
+  public ContactHelper(WebDriver wd) {
     super(wd);
   }
 
