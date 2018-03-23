@@ -2,7 +2,7 @@ package ru.stqa.ntk.addressbook.tests;
 
 import org.testng.annotations.Test;
 import ru.stqa.ntk.addressbook.model.AddressBookData;
-import ru.stqa.ntk.task4.tests.TestsBase;
+import ru.stqa.ntk.addressbook.tests.TestBase;
 
 public class ContactCreationTests extends TestBase {
 
