@@ -2,7 +2,6 @@ package ru.stqa.ntk.addressbook.appmanager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -25,11 +24,11 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if (browser == BrowserType.FIREFOX){
+    if (browser == BrowserType.FIREFOX) {
       wd = new FirefoxDriver();
-    } else if(browser == BrowserType.IE){
+    } else if (browser == BrowserType.IE) {
       wd = new InternetExplorerDriver();
-    } else if (browser == BrowserType.CHROME){
+    } else if (browser == BrowserType.CHROME) {
       wd = new ChromeDriver();
     }
 

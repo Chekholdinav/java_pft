@@ -2,7 +2,6 @@ package ru.stqa.ntk.addressbook.tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import ru.stqa.ntk.task4.tests.TestsBase;
 
 public class ContactDeletionTests extends TestBase {
 

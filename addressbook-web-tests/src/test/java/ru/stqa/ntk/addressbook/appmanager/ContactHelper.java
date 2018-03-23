@@ -3,9 +3,8 @@ package ru.stqa.ntk.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.ntk.addressbook.model.AddressBookData;
-import ru.stqa.ntk.addressbook.appmanager.HelperBase;
 
-public class ContactHelper extends HelperBase{
+public class ContactHelper extends HelperBase {
 
   public ContactHelper(WebDriver wd) {
     super(wd);
@@ -47,10 +46,10 @@ public class ContactHelper extends HelperBase{
   }
 
   public void deleteContact(By id) {
-      if (!wd.findElement(id).isSelected()) {
-          click(id);
-          click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
-      }
+    if (!wd.findElement(id).isSelected()) {
+      click(id);
+      click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
   }
 
   public void setUsername(String login, String password) {
@@ -61,20 +60,20 @@ public class ContactHelper extends HelperBase{
   }
 
   public void selectAlertOk() {
-      wd.switchTo().alert().accept();
+    wd.switchTo().alert().accept();
   }
 
   public void buttonUpdate() {
-      click(By.name("update"));
+    click(By.name("update"));
   }
 
   public void editElement() {
 
-      clear(By.name("firstname"));
-      wd.findElement(By.name("firstname")).sendKeys("oneX");
+    clear(By.name("firstname"));
+    wd.findElement(By.name("firstname")).sendKeys("oneX");
   }
 
   public void selectForEditContact() {
-      wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
+    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
   }
 }
