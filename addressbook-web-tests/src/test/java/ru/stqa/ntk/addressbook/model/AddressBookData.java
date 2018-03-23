@@ -1,6 +1,6 @@
-package ru.stqa.ntk.task4.model;
+package ru.stqa.ntk.addressbook.model;
 
-public class GroupData {
+public class AddressBookData {
   public final String firstname;
   public final String middlename;
   public final String test;
@@ -9,7 +9,7 @@ public class GroupData {
   public final String nickname;
   public final String tester;
 
-  public GroupData(String firstname, String middlename, String test, String lastname, String testov, String nickname, String tester) {
+  public AddressBookData(String firstname, String middlename, String test, String lastname, String testov, String nickname, String tester) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.test = test;

@@ -18,6 +18,7 @@ public class ApplicationManager {
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
   private String browser;
+  private ContactHelper contactHelper;
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -29,7 +30,7 @@ public class ApplicationManager {
     } else if(browser == BrowserType.IE){
       wd = new InternetExplorerDriver();
     } else if (browser == BrowserType.CHROME){
-      wd = new EdgeDriver();
+      wd = new ChromeDriver();
     }
 
 
@@ -40,6 +41,7 @@ public class ApplicationManager {
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
+    contactHelper = new ContactHelper(wd);
   }
 
   public void stop() {
@@ -52,5 +54,9 @@ public class ApplicationManager {
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
+  }
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
   }
 }
