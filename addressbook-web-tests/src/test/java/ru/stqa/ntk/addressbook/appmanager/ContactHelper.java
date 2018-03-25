@@ -1,8 +1,11 @@
 package ru.stqa.ntk.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import ru.stqa.ntk.addressbook.model.AddressBookData;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import ru.stqa.ntk.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase {
 
@@ -38,11 +41,16 @@ public class ContactHelper extends HelperBase {
     type(By.name("fax"), fax);
   }
 
-  public void nameUser(AddressBookData addressBookData) {
-    type(By.name(addressBookData.getFirstname()), "Test");
-    type(By.name(addressBookData.getMiddlename()), addressBookData.getTest());
-    type(By.name(addressBookData.getLastname()), addressBookData.getTestov());
-    type(By.name(addressBookData.getNickname()), addressBookData.getTester());
+  public void nameUser(ContactData contactData, boolean creation) {
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("middlename"), contactData.getMiddlename());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("nickname"), contactData.getNickname());
+    if (creation){
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    } else{
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
   }
 
   public void deleteContact(By id) {

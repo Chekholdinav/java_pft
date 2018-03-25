@@ -1,6 +1,6 @@
 package ru.stqa.ntk.addressbook.model;
 
-public class AddressBookData {
+public class ContactData {
   public final String firstname;
   public final String middlename;
   public final String test;
@@ -8,8 +8,9 @@ public class AddressBookData {
   public final String testov;
   public final String nickname;
   public final String tester;
+  public String group;
 
-  public AddressBookData(String firstname, String middlename, String test, String lastname, String testov, String nickname, String tester) {
+  public ContactData(String firstname, String middlename, String test, String lastname, String testov, String nickname, String tester, String group) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.test = test;
@@ -17,6 +18,7 @@ public class AddressBookData {
     this.testov = testov;
     this.nickname = nickname;
     this.tester = tester;
+    this.group = group;
   }
 
   public String getFirstname() {
@@ -46,4 +48,6 @@ public class AddressBookData {
   public String getTester() {
     return tester;
   }
+
+  public String getGroup() {return group;}
 }
