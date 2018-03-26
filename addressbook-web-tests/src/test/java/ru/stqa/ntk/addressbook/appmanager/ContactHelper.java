@@ -53,12 +53,13 @@ public class ContactHelper extends HelperBase {
     }
   }
 
-  public void deleteContact(By id) {
-    if (!wd.findElement(id).isSelected()) {
-      click(id);
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteContact() {
       click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     }
-  }
 
   public void setUsername(String login, String password) {
     setField("pass", password);
